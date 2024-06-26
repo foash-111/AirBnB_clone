@@ -127,6 +127,7 @@ class HBNBCommand(cmd.Cmd):
 
     def default(self, line=None):
         """excute dynamic methods"""
+        cpd_line = line
         line = line.replace('(', ' ').replace(')', ' ').replace('.', ' ')
         line = line.replace(',', ' ')
         words = line.split()
@@ -161,6 +162,17 @@ class HBNBCommand(cmd.Cmd):
                 line = (words[0] + " " + words[2] + " " +
                         words[3] + " " + words[4])
                 self.do_update(line)
+        elif words[1] == 'update':
+            temp = cpd_line.split('.')
+            new_temp = temp[1][6:]
+            my_tuple = eval(new_temp)
+            # print(my_tuple)
+            # print(type(my_tuple[1]))
+            for key, value in my_tuple[1].items():
+                line = (words[0] + " " + my_tuple[0] + " " +
+                        str(key) + " " + str(value))
+                self.do_update(line)
+
         else:
             print("*** Unknown syntax: " + line)
 
