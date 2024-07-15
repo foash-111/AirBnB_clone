@@ -1,0 +1,36 @@
+
+h1 {
+    font-size: 30px;
+}
+
+article {
+    width: 390px;
+    padding: 20px;
+    margin: 20px;
+    border: #FF5A5F 1px solid;
+    border-radius:4px;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    
+    font-size: 30;
+    font-weight: 600;
+    text-align: center;
+}
+
+.places {
+    display: grid;
+    grid-template-columns: 390px 390px;
+    column-gap: 75px;
+}
+
+.el-1 {
+    grid-column: 1 /-1;
+    text-align: start;
+}
+
+.el-4 {
+    margin-left: 232.5px;
+}
